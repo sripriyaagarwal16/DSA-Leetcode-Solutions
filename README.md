@@ -5,5 +5,5 @@
 </p>
 
 <p align="right">
-  <img src="images/1.png" alt="My photo" style="float: right; width: 200px;height:400px;"/>
+  <img src="images/1.png" alt="My photo" style="float: right; width: 200px;"/>
 </p>
