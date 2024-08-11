@@ -1,1 +1,33 @@
+//Approach for this problem using hashmaps and array
 
+class Solution {
+public:
+//time complexity:O(N); n is size of commands
+//Space complexity:O(1);
+    vector<int>getcolrow(string c,int n ,int i ,int j ){
+        vector<vector<int>>dir={{0,-1},{0,1},{-1,0},{1,0}};
+        unordered_map<string,int>maps={{"LEFT",0},{"RIGHT",1},{"UP",2},{"DOWN",3}};
+        int value=maps[c];
+        int new_i=i+dir[value][0];
+        int new_j=j+dir[value][1];
+        if(new_i>=0 && new_i<n && new_j>=0 && new_j<n){
+            return {new_i,new_j};
+        }
+        return {i,j};
+        
+    }
+    int finalPositionOfSnake(int n, vector<string>& commands) {
+       int row=0;
+       int col=0;
+       int output=0;
+       for(int i =0;i<commands.size();i++){
+          string c =commands[i];
+          vector<int>result=getcolrow(c,n,row,col);
+          row=result[0];
+          col=result[1];
+
+       }
+       output=(row*n)+col;
+       return output;
+    }
+};
